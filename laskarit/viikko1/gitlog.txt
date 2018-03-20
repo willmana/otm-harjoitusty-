@@ -1,0 +1,104 @@
+commit fe612a066fc99409eab463e7208e57f6a2f7ad32
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:40:08 2018 +0200
+
+    harjoittelua
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit dd39321529b194d803775a5b3f04d1470fe13ee8
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:37:16 2018 +0200
+
+    paskaa
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 04eca6c974bb557ce4362b63fb31879168c5a8f6
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:33:04 2018 +0200
+
+    muutoksia
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d862ae07401101a0f2af8f2fa97d7d234fb3dfba
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:26:08 2018 +0200
+
+    uudelleennimeäminen
+
+ tiedosto.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 0b1aee53b125ef916ba16acc8ed0450116b68ddb
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:25:37 2018 +0200
+
+    uudelleennimeäminen
+
+ eka.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0daae3e7506f5d2485f9c039b1e27ceebada689e
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:22:48 2018 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 93988e210db2b6f0be16ab975d124c7141d28786
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 19:03:18 2018 +0200
+
+    uusi kansio ja tiedosto
+
+ stuff/joku.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 27ef5dab11b96a42b6c19b9f32bd8d77ea1ea8db
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 18:59:07 2018 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c081b962e4066b57524b9de69808e5ceb590f398
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 18:58:15 2018 +0200
+
+    lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8ecfa1de25e08a23efd2464edcd03017957c87d6
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 18:54:15 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 88d97d345f0bbeba3ca67fea281852b64091b713
+Author: willmana <aleksi.willman@gmail.com>
+Date:   Tue Mar 20 18:51:16 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
