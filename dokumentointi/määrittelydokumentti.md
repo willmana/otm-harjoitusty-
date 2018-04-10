@@ -6,6 +6,13 @@ tiiviisti ja täyttynyt rivi katoaa aina pelin edetessä.
 
 ## Suunnitellut toiminnallisuudet
 
+Perustoimivuudet
+- Peli muodostaa palikat
+- Palikat tippuu alas
+- Palikoita voi liikuttaa ja pyörittää
+- Palikat voi tiputtaa välittömästi
+- Kun yksi rivi täynnä, se katoaa
+
 Lisäksi pelin perustoimivuuden laajentavat
 - Pisteiden lasku
 - Highscore -lista
