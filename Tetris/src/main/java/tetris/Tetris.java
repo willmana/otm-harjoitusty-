@@ -25,9 +25,5 @@ public class Tetris extends JFrame{
         return statusBar;
     }
     
-    public static void main(String[] args) {
-        Tetris tetris = new Tetris();
-        tetris.setLocationRelativeTo(null); //center
-        tetris.setVisible(true);
-    }
+
 }
