@@ -1,29 +1,28 @@
-
 package tetris;
 
 import java.awt.BorderLayout;
-import javax.swing.*;
 
-public class Tetris extends JFrame{
-    private JLabel statusBar;
-    
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Tetris extends JFrame {
+
+    JLabel statusbar;
+
     public Tetris() {
-        statusBar = new JLabel("0");
-        add(statusBar, BorderLayout.SOUTH);
+
+        statusbar = new JLabel(" 0");
+        add(statusbar, BorderLayout.SOUTH);
         Board board = new Board(this);
         add(board);
-        
-        board.newPiece();
-        board.repaint();
-        
+        board.start();
+
         setSize(200, 400);
-        setTitle("My Tetris");
+        setTitle("Tetris");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-    
-    public JLabel getStatusBar() {
-        return statusBar;
-    }
-    
 
+    public JLabel getStatusBar() {
+        return statusbar;
+    }
 }
