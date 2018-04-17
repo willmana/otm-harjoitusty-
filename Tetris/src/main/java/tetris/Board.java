@@ -16,8 +16,8 @@ import tetris.Shape.Tetrominos;
 
 public class Board extends JPanel implements ActionListener {
 
-    final int BoardWidth = 10;
-    final int BoardHeight = 22;
+    final int boardWidth = 10;
+    final int boardHeight = 22;
 
     Timer timer;
     boolean isFallingFinished = false;
@@ -38,7 +38,7 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
 
         statusbar = parent.getStatusBar();
-        board = new Tetrominos[BoardWidth * BoardHeight];
+        board = new Tetrominos[boardWidth * boardHeight];
         addKeyListener(new TAdapter());
         clearBoard();
     }
@@ -53,15 +53,15 @@ public class Board extends JPanel implements ActionListener {
     }
 
     int squareWidth() {
-        return (int) getSize().getWidth() / BoardWidth;
+        return (int) getSize().getWidth() / boardWidth;
     }
 
     int squareHeight() {
-        return (int) getSize().getHeight() / BoardHeight;
+        return (int) getSize().getHeight() / boardHeight;
     }
 
     Tetrominos shapeAt(int x, int y) {
-        return board[(y * BoardWidth) + x];
+        return board[(y * boardWidth) + x];
     }
 
     public void start() {
@@ -96,26 +96,23 @@ public class Board extends JPanel implements ActionListener {
 
     public void paint(Graphics g) {
         super.paint(g);
-
         Dimension size = getSize();
-        int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
-
-        for (int i = 0; i < BoardHeight; ++i) {
-            for (int j = 0; j < BoardWidth; ++j) {
-                Tetrominos shape = shapeAt(j, BoardHeight - i - 1);
+        int boardTop = (int) size.getHeight() - boardHeight * squareHeight();
+        for (int i = 0; i < boardHeight; ++i) {
+            for (int j = 0; j < boardWidth; ++j) {
+                Tetrominos shape = shapeAt(j, boardHeight - i - 1);
                 if (shape != Tetrominos.NoShape) {
                     drawSquare(g, 0 + j * squareWidth(),
                             boardTop + i * squareHeight(), shape);
                 }
             }
         }
-
         if (curPiece.getShape() != Tetrominos.NoShape) {
             for (int i = 0; i < 4; ++i) {
                 int x = curX + curPiece.x(i);
                 int y = curY - curPiece.y(i);
                 drawSquare(g, 0 + x * squareWidth(),
-                        boardTop + (BoardHeight - y - 1) * squareHeight(),
+                        boardTop + (boardHeight - y - 1) * squareHeight(),
                         curPiece.getShape());
             }
         }
@@ -139,7 +136,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void clearBoard() {
-        for (int i = 0; i < BoardHeight * BoardWidth; ++i) {
+        for (int i = 0; i < boardHeight * boardWidth; ++i) {
             board[i] = Tetrominos.NoShape;
         }
     }
@@ -148,7 +145,7 @@ public class Board extends JPanel implements ActionListener {
         for (int i = 0; i < 4; ++i) {
             int x = curX + curPiece.x(i);
             int y = curY - curPiece.y(i);
-            board[(y * BoardWidth) + x] = curPiece.getShape();
+            board[(y * boardWidth) + x] = curPiece.getShape();
         }
 
         removeFullLines();
@@ -160,14 +157,14 @@ public class Board extends JPanel implements ActionListener {
 
     private void newPiece() {
         curPiece.setRandomShape();
-        curX = BoardWidth / 2 + 1;
-        curY = BoardHeight - 1 + curPiece.minY();
+        curX = boardWidth / 2 + 1;
+        curY = boardHeight - 1 + curPiece.minY();
 
         if (!tryMove(curPiece, curX, curY)) {
             curPiece.setShape(Tetrominos.NoShape);
             timer.stop();
             isStarted = false;
-            statusbar.setText("game over");
+            statusbar.setText("Game over! Score: " + numLinesRemoved);
         }
     }
 
@@ -175,7 +172,7 @@ public class Board extends JPanel implements ActionListener {
         for (int i = 0; i < 4; ++i) {
             int x = newX + newPiece.x(i);
             int y = newY - newPiece.y(i);
-            if (x < 0 || x >= BoardWidth || y < 0 || y >= BoardHeight) {
+            if (x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) {
                 return false;
             }
             if (shapeAt(x, y) != Tetrominos.NoShape) {
@@ -192,31 +189,28 @@ public class Board extends JPanel implements ActionListener {
 
     private void removeFullLines() {
         int numFullLines = 0;
-
-        for (int i = BoardHeight - 1; i >= 0; --i) {
+        for (int i = boardHeight - 1; i >= 0; --i) {
             boolean lineIsFull = true;
-
-            for (int j = 0; j < BoardWidth; ++j) {
+            for (int j = 0; j < boardWidth; ++j) {
                 if (shapeAt(j, i) == Tetrominos.NoShape) {
                     lineIsFull = false;
                     break;
                 }
             }
-
             if (lineIsFull) {
                 ++numFullLines;
-                for (int k = i; k < BoardHeight - 1; ++k) {
-                    for (int j = 0; j < BoardWidth; ++j) {
-                        board[(k * BoardWidth) + j] = shapeAt(j, k + 1);
+                for (int k = i; k < boardHeight - 1; ++k) {
+                    for (int j = 0; j < boardWidth; ++j) {
+                        board[(k * boardWidth) + j] = shapeAt(j, k + 1);
                     }
                 }
-                if(numFullLines % 4 == 0) {
-                    timer.setDelay(timer.getDelay() - 1);
+                if (numLinesRemoved % 4 == 0) {
+                    if (timer.getDelay() != 150) {
+                        timer.setDelay(timer.getDelay() - 5); 
+                    }
                 }
-
-            }
+            }           
         }
-
         if (numFullLines > 0) {
             numLinesRemoved += numFullLines;
             statusbar.setText(String.valueOf(numLinesRemoved));
