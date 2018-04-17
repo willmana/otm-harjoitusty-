@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.Tetris;
+import tetris.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -49,6 +50,15 @@ public class tetrisTest {
         
         assertTrue(tetris.getStatusBar() != null);
     }
+    
+//    @Test
+//    public void painaus() {
+//        Tetris tetris = new Tetris();
+//        tetris.setLocationRelativeTo(null); 
+//        tetris.setVisible(true);
+//        
+//        
+//    }
 
     // @Test
     // public void hello() {}

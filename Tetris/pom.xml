@@ -39,8 +39,8 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>tetris/Board.class</exclude>
-                        <exclude>tetris/Board.TAdapter</exclude>
+                        <exclude>tetris/Board.*</exclude>
+                        <exclude></exclude>
                         <exclude>Graphics/*</exclude>
                     </excludes>
                 </configuration>    
