@@ -8,7 +8,7 @@ Peliä itsessään pystyy jo pelaamaan. Pelin nopeus kiihtyy aina joka neljänne
 ## Dokumentaatio
 - [Suunnitelma](https://github.com/willmana/otm-harjoitusty-/blob/master/dokumentointi/m%C3%A4%C3%A4rittelydokumentti.md)
 - [Aikakirjanpito](https://github.com/willmana/otm-harjoitusty-/blob/master/dokumentointi/Ty%C3%B6aikakirjanpito.md)
-- [Arkkitehtuuri] (https://github.com/willmana/otm-harjoitusty-/blob/master/dokumentointi/arkkitehtuuri.md)
+- [Arkkitehtuuri](https://github.com/willmana/otm-harjoitusty-/blob/master/dokumentointi/arkkitehtuuri.md)
 
 
 ### Testaus
