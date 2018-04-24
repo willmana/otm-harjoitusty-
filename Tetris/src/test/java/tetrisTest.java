@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
 
 /**
  *
@@ -53,9 +54,7 @@ public class tetrisTest {
     
 //    @Test
 //    public void painaus() {
-//        Tetris tetris = new Tetris();
-//        tetris.setLocationRelativeTo(null); 
-//        tetris.setVisible(true);
+//        
 //        
 //        
 //    }
