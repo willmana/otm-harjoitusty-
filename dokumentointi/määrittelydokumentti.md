@@ -7,21 +7,21 @@ tiiviisti ja täyttynyt rivi katoaa aina pelin edetessä.
 ## Suunnitellut toiminnallisuudet
 
 Perustoimivuudet
-- Peli muodostaa palikat
-- Palikat tippuu alas
-- Palikoita voi liikuttaa ja pyörittää
-- Palikat voi tiputtaa välittömästi
-- Kun yksi rivi täynnä, se katoaa
+- [x] Peli muodostaa palikat 
+- [x] Palikat tippuu alas 
+- [x] Palikoita voi liikuttaa ja pyörittää
+- [x] Palikat voi tiputtaa välittömästi
+- [x] Kun yksi rivi täynnä, se katoaa
 
 Lisäksi pelin perustoimivuuden laajentavat
-- Pisteiden lasku
-- Highscore -lista
-- Peli nopeutuu ajan myötä
-- Eri käyttöliittymiä mm. aloitusruutu, peli itsessään ja game over ruutu
-- Mahdollisuus pausettaa peli
+- [x] Pisteiden lasku
+- [] Highscore -lista
+- [x] Peli nopeutuu ajan myötä
+- [x] Eri käyttöliittymiä mm. aloitusruutu, peli itsessään ja game over ruutu
+- [x] Mahdollisuus pausettaa peli
 
 Lisäksi yritän saada seuraavia toimintoja toimimaan:
-- Mahdollisuus nähdä seuraava pala
-- Välitön palan tiputus jollain näppäinkomennolla
-- Tapa nimetä tulos highscore listalle joka näyttää pisteen ja nimen
+- [] Mahdollisuus nähdä seuraava pala
+- [x] Välitön palan tiputus jollain näppäinkomennolla
+- [] Tapa nimetä tulos highscore listalle joka näyttää pisteen ja nimen
 
