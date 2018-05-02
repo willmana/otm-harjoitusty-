@@ -9,4 +9,4 @@
 | 16.4 |  2h   | Checkstylen käyttöönotto ja käyttöliittymän rakentavan koodin poisto jacoco reportista |
 | 17.4 |   30 min  | lisäsin muutamia kommentteja jo koodin sekaan jotka kertoo sovelluksen toiminnasta |
 | 28.4 | 4h | Pakkausrakenteen päivitystä, uusi aloitusruutu missä napit muihin olennaisiin asioihin, ylipäänsä pientä fiksailua kaikkialla |
-|yht.|21h 30 min| arvio |
+|yht.|25h 30 min| arvio |
