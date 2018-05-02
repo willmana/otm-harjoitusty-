@@ -25,3 +25,14 @@ Testikattavuusraportti luodaan komennolla
 ```
 mvn jacoco:report
 ```
+Jar- tiedoston saa komennolla 
+
+```
+mvn package
+```
+
+Checkstylen voi generoida komennolla 
+
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
