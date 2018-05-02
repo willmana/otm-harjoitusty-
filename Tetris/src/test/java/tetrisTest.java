@@ -1,12 +1,12 @@
 
 
+import tetris.ui.Tetris;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import tetris.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

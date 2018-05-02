@@ -1,5 +1,6 @@
-package tetris;
+package tetris.main;
 
+import tetris.ui.Tetris;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -12,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import tetris.Shape.Tetrominos;
+import tetris.main.Shape.Tetrominos;
 
 public class Board extends JPanel implements ActionListener {
 

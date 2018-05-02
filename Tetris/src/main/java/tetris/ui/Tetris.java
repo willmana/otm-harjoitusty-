@@ -1,9 +1,10 @@
-package tetris;
+package tetris.ui;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import tetris.main.Board;
 
 public class Tetris extends JFrame {
 
@@ -19,7 +20,7 @@ public class Tetris extends JFrame {
 
         setSize(200, 400);
         setTitle("Tetris");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
 
     public JLabel getStatusBar() {
