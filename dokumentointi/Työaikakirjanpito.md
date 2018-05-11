@@ -10,4 +10,6 @@
 | 17.4 |   30 min  | lisäsin muutamia kommentteja jo koodin sekaan jotka kertoo sovelluksen toiminnasta |
 | 28.4 | 4h | Pakkausrakenteen päivitystä, uusi aloitusruutu missä napit muihin olennaisiin asioihin, ylipäänsä pientä fiksailua kaikkialla |
 | 2.5 | 2h | Tein lokaalisti databasen ja kertailin tietokantojen yhdistämistä javaan, en pushannut kyseisiä asioita koska ovat niin vaiheessa |
-|yht.|27h 30 min| arvio |
+| 10.5 | 8h | Database toimii, eli meillä on highscore -lista |
+| 11.5 | 6h | Javadoc ja muu dokumentointi finaaliin.|
+|yht.|41h 30 min| arvio |
