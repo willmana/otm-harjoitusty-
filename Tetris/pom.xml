@@ -39,9 +39,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>tetris.ui/*</exclude>
-                        <exclude></exclude>
-                        <exclude>Graphics/*</exclude>
+                        <exclude>tetris/ui/*</exclude>
                     </excludes>
                 </configuration>    
                 <executions>
@@ -66,7 +64,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>tetris.Main</mainClass>
+                                    <mainClass>tetris.ui.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
