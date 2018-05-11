@@ -15,7 +15,7 @@ Perustoimivuudet
 
 Lisäksi pelin perustoimivuuden laajentavat
 - [x] Pisteiden lasku
-- [ ] Highscore -lista
+- [x] Highscore -lista
 - [x] Peli nopeutuu ajan myötä
 - [x] Eri käyttöliittymiä mm. aloitusruutu, peli itsessään ja game over ruutu
 - [x] Mahdollisuus pausettaa peli
@@ -23,5 +23,6 @@ Lisäksi pelin perustoimivuuden laajentavat
 Lisäksi yritän saada seuraavia toimintoja toimimaan:
 - [ ] Mahdollisuus nähdä seuraava pala
 - [x] Välitön palan tiputus jollain näppäinkomennolla
-- [ ] Tapa nimetä tulos highscore listalle joka näyttää pisteen ja nimen
+- [x] Tapa nimetä tulos highscore listalle joka näyttää pisteen ja nimen
 
+Merkitsin siis kaikki toiminnallisuudet mitä onnistuin toteuttamaan. Aloitin kyllä seuraavan palan tutkimisen mutta en saanut toimimaan kunnolla joten päätin jättää toiminnallisuudet tähän.
