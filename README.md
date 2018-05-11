@@ -12,7 +12,7 @@ Peliä itsessään pystyy jo pelaamaan. Pelin nopeus kiihtyy aina joka neljänne
 - [Release](https://github.com/willmana/otm-harjoitusty-/releases/tag/viikko5)
 
 
-## Testaus
+## Terminaalista suoritettavat komennot
 
 Testit suoritetaan komennolla
 
