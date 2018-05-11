@@ -10,12 +10,15 @@ public class Tetris extends JFrame {
 
     JLabel statusbar;
 
+    /**
+     * We make the game board here and start the game.
+     */
     public Tetris() {
-
         statusbar = new JLabel(" 0");
         add(statusbar, BorderLayout.SOUTH);
         Board board = new Board(this);
         add(board);
+
         board.start();
 
         setSize(200, 400);

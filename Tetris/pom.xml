@@ -39,7 +39,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>tetris/Board.*</exclude>
+                        <exclude>tetris.ui/*</exclude>
                         <exclude></exclude>
                         <exclude>Graphics/*</exclude>
                     </excludes>
@@ -83,6 +83,11 @@
             <version>4.12</version>
             <scope>test</scope>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.18.0</version>
         </dependency>
     </dependencies>
 </project>

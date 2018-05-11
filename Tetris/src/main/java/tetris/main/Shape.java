@@ -3,7 +3,9 @@ package tetris.main;
 import java.util.Random;
 
 public class Shape {
-    //Tetrominos enum has all the different shapes. Also we have the empty shape NoShape
+    /**
+     * Holds all seven tetris shape names and empty shape called "NoShape".
+     */
     enum Tetrominos {
         NoShape, ZShape, SShape, LineShape,
         TShape, SquareShape, LShape, MirroredLShape
@@ -13,7 +15,9 @@ public class Shape {
     private int coords[][];
     private int[][][] coordsTable;
 
-    //Array coords in the constructor holds all the actual coordinates of pieces
+    /**
+     * The constructor, array coords holds the actual coordinates of a tetris piece.
+     */
     public Shape() {
 
         coords = new int[4][2];
@@ -21,8 +25,14 @@ public class Shape {
 
     }
 
+    /**
+     * coordsTable array holds all possible coordinate values of pieces. Like method name says
+     * here we set the shape for a piece.
+     * 
+     * @param Tetrominos
+     *
+     */
     public void setShape(Tetrominos shape) {
-        //coordsTable is a template from which all pieces take their coordinate values.
         coordsTable = new int[][][]{
             {{0, 0}, {0, 0}, {0, 0}, {0, 0}},     // NoShape
             {{0, -1}, {0, 0}, {-1, 0}, {-1, 1}},  // ZShape
@@ -66,6 +76,9 @@ public class Shape {
         return pieceShape;
     }
 
+    /**
+     * We want our pieces to generate randomly so we have this method to thank.
+     */
     public void setRandomShape() {
         Random r = new Random();
         int x = Math.abs(r.nextInt()) % 7 + 1;
@@ -89,8 +102,11 @@ public class Shape {
         return m;
     }
     
-    //This rotates piece to the left. You can use coordinate system to understand why 
-    //this method works this way.
+    /**
+     * Simply rotates the piece to left. You may use coordinate table to understand if unclear
+     * why this works.
+     *
+     */
     public Shape rotateLeft() {
         if (pieceShape == Tetrominos.SquareShape) {
             return this;
@@ -106,7 +122,10 @@ public class Shape {
         return result;
     }
     
-    //This rotates piece to the right.
+
+    /**
+     * Like rotateLeft(), but right.
+     */
     public Shape rotateRight() {
         if (pieceShape == Tetrominos.SquareShape) {
             return this;

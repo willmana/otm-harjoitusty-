@@ -8,13 +8,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
 import tetris.main.Shape.Tetrominos;
+import tetris.ui.InsertScore;
+import tetris.db.*;
 
+/**
+ * Here all the actual magic happens.
+ */
 public class Board extends JPanel implements ActionListener {
 
     final int boardWidth = 10;
@@ -30,13 +33,22 @@ public class Board extends JPanel implements ActionListener {
     JLabel statusbar;
     Shape curPiece;
     Tetrominos[] board;
+    private Database database;
+    private HighScoreDao scores;
 
+    /**
+     * Here we input keyboard and make some prepping for game to work.
+     * 
+     * @param Tetris
+     */
     public Board(Tetris parent) {
 
         setFocusable(true);
         curPiece = new Shape();
         timer = new Timer(400, this);
         timer.start();
+        this.database = new Database("jdbc:sqlite:highscore.db");
+        this.scores = new HighScoreDao(this.database);
 
         statusbar = parent.getStatusBar();
         board = new Tetrominos[boardWidth * boardHeight];
@@ -44,6 +56,13 @@ public class Board extends JPanel implements ActionListener {
         clearBoard();
     }
 
+    /**
+     * This methods checks if piece has reached bottom, making new piece. Otherwise the piece goes
+     * one line down.
+     * 
+     * @param ActionEvent
+     */
+    @Override
     public void actionPerformed(ActionEvent e) {
         if (isFallingFinished) {
             isFallingFinished = false;
@@ -65,6 +84,9 @@ public class Board extends JPanel implements ActionListener {
         return board[(y * boardWidth) + x];
     }
 
+    /**
+     * Here we actually start the game.
+     */
     public void start() {
         if (isPaused) {
             return;
@@ -79,6 +101,9 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
     }
 
+    /**
+     * Pauses the game when player presses p-button.
+     */
     private void pause() {
         if (!isStarted) {
             return;
@@ -95,6 +120,11 @@ public class Board extends JPanel implements ActionListener {
         repaint();
     }
 
+    /**
+     * Here we draw all objects on the board. First we paint all the shapes or their remains.
+     * After that we pain the falling piece.
+     */
+    @Override
     public void paint(Graphics g) {
         super.paint(g);
         Dimension size = getSize();
@@ -119,6 +149,9 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * If player presses spacebar, we drop the piece down.
+     */
     private void dropDown() {
         int newY = curY;
         while (newY > 0) {
@@ -136,12 +169,19 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Fills the board with empty NoShapes.
+     */
     private void clearBoard() {
         for (int i = 0; i < boardHeight * boardWidth; ++i) {
             board[i] = Tetrominos.NoShape;
         }
     }
 
+    /**
+     * Puts falling piece to our board array which holds also all remains of old pieces.
+     * Then checks if we need to remove a line or more.
+     */
     private void pieceDropped() {
         for (int i = 0; i < 4; ++i) {
             int x = curX + curPiece.x(i);
@@ -156,6 +196,9 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Creates new piece.
+     */
     private void newPiece() {
         curPiece.setRandomShape();
         curX = boardWidth / 2 + 1;
@@ -165,10 +208,22 @@ public class Board extends JPanel implements ActionListener {
             curPiece.setShape(Tetrominos.NoShape);
             timer.stop();
             isStarted = false;
-            statusbar.setText("Game over! Score: " + numLinesRemoved);
+            
+            
+            InsertScore score = new InsertScore(this);
+            score.setLocationRelativeTo(null);
+            score.setVisible(true);
         }
     }
 
+    /**
+     * Tries to move the piece. Returns false when not possible and true when possible.
+     * 
+     * @param Shape
+     * @param int
+     * @param int
+     * @return boolean
+     */
     private boolean tryMove(Shape newPiece, int newX, int newY) {
         for (int i = 0; i < 4; ++i) {
             int x = newX + newPiece.x(i);
@@ -188,6 +243,9 @@ public class Board extends JPanel implements ActionListener {
         return true;
     }
 
+    /**
+     * Here we remove the full lines.
+     */
     private void removeFullLines() {
         int numFullLines = 0;
         for (int i = boardHeight - 1; i >= 0; --i) {
@@ -221,6 +279,15 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * We draw the squares for all pieces here.
+     * 
+     * @param Graphics
+     * @param int
+     * @param int
+     * @param int
+     * @param Tetrominos
+     */
     private void drawSquare(Graphics g, int x, int y, Tetrominos shape) {
         Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102),
             new Color(102, 204, 102), new Color(102, 102, 204),
@@ -243,9 +310,24 @@ public class Board extends JPanel implements ActionListener {
         g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1,
                 x + squareWidth() - 1, y + 1);
     }
+    
+    public int getScore() {
+        return numLinesRemoved;
+    }
+    
+    public HighScoreDao getScores() {
+        return scores;
+    }
+    
+    
 
+    /**
+     * Since we want to control the game with keyboard, here we implement all the different occasions
+     * to make it possible.
+     */
     class TAdapter extends KeyAdapter {
 
+        @Override
         public void keyPressed(KeyEvent e) {
 
             if (!isStarted || curPiece.getShape() == Tetrominos.NoShape) {

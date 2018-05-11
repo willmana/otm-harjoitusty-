@@ -12,6 +12,9 @@ public class Controls extends JFrame{
         initUI();
     }
     
+    /**
+     * Shows all the controls that player can use while playing.
+     */
     private void initUI() {
         String controls = "<html>"
                 + "Up - Rotates the block.<br>"
